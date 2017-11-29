@@ -1,0 +1,44 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="aeronaves">Aeronaves</a></li>
+  <li role="presentation"><a href="alunos">Alunos</a></li>
+</ul>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aeronaves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Nome /</th>
+      <th>Numero de tripulantes /</th>
+      <th>Tamanho /</th>
+      <th>Numero /</th>
+      <th>Chassi /</th>
+      <th>Qtd de horas voo /</th>
+      <th>Quantidades de motor </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aeronaves.each do |aeronave| %>
+      <tr>
+        <td><%= aeronave.nome %></td>
+        <td><%= aeronave.numerodetripulantes %></td>
+        <td><%= aeronave.tamanho %></td>
+        <td><%= aeronave.numero %></td>
+        <td><%= aeronave.chassi %></td>
+        <td><%= aeronave.qtddehorasvoo %></td>
+        <td><%= aeronave.quantidadesdemotor %></td>
+        <td><%= link_to 'Show', aeronave %></td>
+        <td><%= link_to 'Edit', edit_aeronave_path(aeronave) %></td>
+        <td><%= link_to 'Destroy', aeronave, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aeronave', new_aeronave_path %>
